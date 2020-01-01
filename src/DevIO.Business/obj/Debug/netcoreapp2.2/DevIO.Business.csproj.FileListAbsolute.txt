@@ -1,0 +1,16 @@
+C:\Dev\DesenvolvedorIO\DesenvolvedorIO\src\DevIO.Business\bin\Debug\netcoreapp2.2\DevIO.Business.deps.json
+C:\Dev\DesenvolvedorIO\DesenvolvedorIO\src\DevIO.Business\bin\Debug\netcoreapp2.2\DevIO.Business.dll
+C:\Dev\DesenvolvedorIO\DesenvolvedorIO\src\DevIO.Business\bin\Debug\netcoreapp2.2\DevIO.Business.pdb
+C:\Dev\DesenvolvedorIO\DesenvolvedorIO\src\DevIO.Business\obj\Debug\netcoreapp2.2\DevIO.Business.csprojAssemblyReference.cache
+C:\Dev\DesenvolvedorIO\DesenvolvedorIO\src\DevIO.Business\obj\Debug\netcoreapp2.2\DevIO.Business.AssemblyInfoInputs.cache
+C:\Dev\DesenvolvedorIO\DesenvolvedorIO\src\DevIO.Business\obj\Debug\netcoreapp2.2\DevIO.Business.AssemblyInfo.cs
+C:\Dev\DesenvolvedorIO\DesenvolvedorIO\src\DevIO.Business\obj\Debug\netcoreapp2.2\DevIO.Business.dll
+C:\Dev\DesenvolvedorIO\DesenvolvedorIO\src\DevIO.Business\obj\Debug\netcoreapp2.2\DevIO.Business.pdb
+C:\Dev\DesenvolvedorIO\src\DevIO.Business\bin\Debug\netcoreapp2.2\DevIO.Business.deps.json
+C:\Dev\DesenvolvedorIO\src\DevIO.Business\bin\Debug\netcoreapp2.2\DevIO.Business.dll
+C:\Dev\DesenvolvedorIO\src\DevIO.Business\bin\Debug\netcoreapp2.2\DevIO.Business.pdb
+C:\Dev\DesenvolvedorIO\src\DevIO.Business\obj\Debug\netcoreapp2.2\DevIO.Business.csprojAssemblyReference.cache
+C:\Dev\DesenvolvedorIO\src\DevIO.Business\obj\Debug\netcoreapp2.2\DevIO.Business.AssemblyInfoInputs.cache
+C:\Dev\DesenvolvedorIO\src\DevIO.Business\obj\Debug\netcoreapp2.2\DevIO.Business.AssemblyInfo.cs
+C:\Dev\DesenvolvedorIO\src\DevIO.Business\obj\Debug\netcoreapp2.2\DevIO.Business.dll
+C:\Dev\DesenvolvedorIO\src\DevIO.Business\obj\Debug\netcoreapp2.2\DevIO.Business.pdb

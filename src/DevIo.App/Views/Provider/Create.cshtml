@@ -1,0 +1,78 @@
+﻿@model DevIo.App.Models.ProviderViewModel
+
+@{
+    ViewData["Title"] = "New Provider";
+}
+<div class="container">
+    <h3> @ViewData["Title"]</h3>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="Document" class="control-label"></label>
+                        <input asp-for="Document" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="Document" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProviderType" class="control-label"></label><br />
+                    <input type="radio" value="1" asp-for="ProviderType" /> Natural Person <br />
+                    <input type="radio" value="2" asp-for="ProviderType" checked /> Juristic Person
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                    </label>
+                </div>
+                <hr />
+                <h4>Address</h4>
+                <partial name="_address" />
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary btn-sm" />
+                    <a asp-action="Index" class="btn btn-sm btn-light">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        var zipcode = document.querySelector("#zipcode");
+        var city = document.querySelector(".city");
+        var state = document.querySelector(".state");
+        var complement = document.querySelector(".complement");
+        var street = document.querySelector(".street");
+        var district = document.querySelector(".district");
+
+        zipcode.addEventListener("blur", GetAddress);
+
+        function GetAddress() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", `https://viacep.com.br/ws/${zipcode.value}/json/`, true);
+            xhr.onload = function () {
+                if (this.status == 200) {
+                    var data = JSON.parse(this.responseText);
+                    console.log(data);
+                    street.value = data.logradouro;
+                    district.value = data.bairro;
+                    city.value = data.localidade;
+                    state.value = data.uf;
+                    complement.value = data.complemento;
+                };
+            };
+            xhr.send();
+        };
+    </script>
+}
