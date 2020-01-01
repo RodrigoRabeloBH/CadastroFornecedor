@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FA1FF3A7-5717-4C2E-B256-F83758F8BC74}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevIO.App", "src\DevIo.App\DevIO.App.csproj", "{5DE74821-A793-420C-93D6-C4187B08292E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevIo.App", "src\DevIo.App\DevIo.App.csproj", "{5DE74821-A793-420C-93D6-C4187B08292E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevIO.Business", "src\DevIO.Business\DevIO.Business.csproj", "{5FF0076C-C7E8-4620-B035-744C61A1E312}"
 EndProject

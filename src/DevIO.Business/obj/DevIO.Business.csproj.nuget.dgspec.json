@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Dev\\DesenvolvedorIO\\src\\DevIO.Business\\DevIO.Business.csproj": {}
+    "C:\\Dev\\CadastroFornecedor\\src\\DevIO.Business\\DevIO.Business.csproj": {}
   },
   "projects": {
-    "C:\\Dev\\DesenvolvedorIO\\src\\DevIO.Business\\DevIO.Business.csproj": {
+    "C:\\Dev\\CadastroFornecedor\\src\\DevIO.Business\\DevIO.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\DesenvolvedorIO\\src\\DevIO.Business\\DevIO.Business.csproj",
+        "projectUniqueName": "C:\\Dev\\CadastroFornecedor\\src\\DevIO.Business\\DevIO.Business.csproj",
         "projectName": "DevIO.Business",
-        "projectPath": "C:\\Dev\\DesenvolvedorIO\\src\\DevIO.Business\\DevIO.Business.csproj",
+        "projectPath": "C:\\Dev\\CadastroFornecedor\\src\\DevIO.Business\\DevIO.Business.csproj",
         "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\DesenvolvedorIO\\src\\DevIO.Business\\obj\\",
+        "outputPath": "C:\\Dev\\CadastroFornecedor\\src\\DevIO.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

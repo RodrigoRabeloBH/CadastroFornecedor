@@ -73,7 +73,7 @@ namespace DevIo.App.Controllers
 
             string imageUrl = $"images/products/{imageName}";
 
-            await UploadImage(productViewModel);
+            await UploadImage(productViewModel, imageName);
 
             productViewModel.ImageUrl = imageUrl;
             productViewModel.Created = DateTime.Now;
@@ -105,16 +105,18 @@ namespace DevIo.App.Controllers
 
                 string imageUrl = $"images/products/{imageName}";
 
-                await UploadImage(productViewModel);
+                await UploadImage(productViewModel, imageName);
 
                 productViewModel.ImageUrl = imageUrl;
-
-                productViewModel.Created = product.Created;
-
-                productViewModel.ProviderId = product.ProviderId;
+            }
+            else
+            {
+                productViewModel.ImageUrl = product.ImageUrl;
             }
 
-            productViewModel.ImageUrl = product.ImageUrl;
+            productViewModel.Created = product.Created;
+
+            productViewModel.ProviderId = product.ProviderId;
 
             await _repository.Edit(_mapper.Map<Product>(productViewModel));
 
@@ -136,13 +138,12 @@ namespace DevIo.App.Controllers
             return RedirectToAction("Index");
         }
 
-        private async Task UploadImage(ProductViewModel productViewModel)
+        private async Task UploadImage(ProductViewModel productViewModel, string imageName)
         {
             if (productViewModel.Image != null)
             {
-                string uniqueName = Guid.NewGuid() + "_" + productViewModel.Image.FileName;
                 string uploadFolder = Path.Combine(_env.WebRootPath, "images/products");
-                string filePath = Path.Combine(uploadFolder, uniqueName);
+                string filePath = Path.Combine(uploadFolder, imageName);
 
                 using (var stream = new FileStream(filePath, FileMode.OpenOrCreate))
                 {
