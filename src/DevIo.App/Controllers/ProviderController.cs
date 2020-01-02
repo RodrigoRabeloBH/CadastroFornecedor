@@ -26,7 +26,9 @@ namespace DevIo.App.Controllers
         public async Task<IActionResult> Index()
         {
             var list = await _repository.GetAll();
+
             var providers = _mapper.Map<List<ProviderViewModel>>(list);
+
             var model = new ProviderIndexModel
             {
                 Providers = providers
@@ -52,21 +54,20 @@ namespace DevIo.App.Controllers
         public async Task<IActionResult> Edit(Guid id)
         {
             var provider = await _repository.GetProviderProductsAddressById(id);
+
             var model = _mapper.Map<ProviderViewModel>(provider);
+
             return View(model);
         }
 
         [HttpPost]
         public async Task<IActionResult> Edit(ProviderViewModel providerViewModel)
         {
-            if (providerViewModel != null)
-            {
-                var provider = _mapper.Map<Provider>(providerViewModel);
-                await _repository.Edit(provider);
-                return RedirectToAction("Detail", new { id = provider.Id });
-            }
-            else
-                return View(providerViewModel);
+            if (!ModelState.IsValid) return View(providerViewModel);
+
+            await _repository.Edit(_mapper.Map<Provider>(providerViewModel));
+
+            return RedirectToAction("Detail", new { id = providerViewModel.Id });
         }
 
         [HttpGet]
@@ -78,16 +79,20 @@ namespace DevIo.App.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(ProviderViewModel providerViewModel)
         {
-            var provider = _mapper.Map<Provider>(providerViewModel);
-            await _repository.Add(provider);
-            return RedirectToAction("Detail", new { id = provider.Id });
+            if (!ModelState.IsValid) return View(providerViewModel);
+
+            await _repository.Add(_mapper.Map<Provider>(providerViewModel));
+
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
         public async Task<IActionResult> Delete(Guid id)
         {
             var provider = await _repository.GetProviderAddressById(id);
+
             var model = _mapper.Map<ProviderViewModel>(provider);
+
             return View(model);
         }
 
@@ -95,8 +100,11 @@ namespace DevIo.App.Controllers
         public async Task<IActionResult> Delete(ProviderViewModel providerViewModel)
         {
             var address = await _address.GetAddressByProvider(providerViewModel.Id);
-            await _address.Delete(_mapper.Map<Address>(address));      
+
+            await _address.Delete(_mapper.Map<Address>(address));
+
             await _repository.Delete(_mapper.Map<Provider>(providerViewModel));
+
             return RedirectToAction("Index");
         }
     }

@@ -115,8 +115,9 @@ namespace DevIo.App.Controllers
             }
 
             productViewModel.Created = product.Created;
-
+           
             productViewModel.ProviderId = product.ProviderId;
+           
 
             await _repository.Edit(_mapper.Map<Product>(productViewModel));
 

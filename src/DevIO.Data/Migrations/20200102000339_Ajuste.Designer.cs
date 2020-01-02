@@ -4,14 +4,16 @@ using DevIO.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DevIO.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20200102000339_Ajuste")]
+    partial class Ajuste
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -91,7 +93,9 @@ namespace DevIO.Data.Migrations
                         .HasColumnType("varchar(120)")
                         .HasMaxLength(120);
 
-                    b.Property<double>("Price");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(6,2)")
+                        .HasMaxLength(400);
 
                     b.Property<Guid>("ProviderId");
 

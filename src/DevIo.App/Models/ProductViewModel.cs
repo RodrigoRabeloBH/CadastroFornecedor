@@ -25,8 +25,8 @@ namespace DevIo.App.Models
 
         public IFormFile Image { get; set; }
 
-        [Required(ErrorMessage = "{0} is required!")]       
-        public decimal Price { get; set; }
+        [Required(ErrorMessage = "{0} is required")]              
+        public string Price { get; set; }
 
         [Display(Name = "Created Date")]
         [DataType(DataType.Date)]
