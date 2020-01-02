@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using DevIo.App.Models;
@@ -39,7 +40,7 @@ namespace DevIo.App.Controllers
         [HttpGet]
         public async Task<IActionResult> Detail(Guid id)
         {
-            var provider = await _repository.GetProviderAddressById(id);
+            var provider = await _repository.GetProviderProductsAddressById(id);          
 
             if (provider != null)
             {

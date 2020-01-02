@@ -6,8 +6,8 @@
 
 
 <div class="container">
-    <h3 class="">@ViewData["Title"]</h3>
-    <hr />
+    <h3 class="mt-4">@ViewData["Title"]</h3>
+    <hr class="my-4" />
     <div class="row d-flex justify-content-center jumbotron">
         <div class="col-md-6 card p-4">
             <form asp-action="Create" enctype="multipart/form-data">
@@ -76,7 +76,7 @@
         function ValidatePrice() {
             var re = /^[0-9]{3,6}(,[0-9]{2})$/;
             if (!re.test(price.value)) {
-                span.textContent = "Price must be a number between 100,00 and 999999,99"; 
+                span.textContent = "Price must be a number between 100,00 and 999999,99";
                 price.value = "";
             }
         }

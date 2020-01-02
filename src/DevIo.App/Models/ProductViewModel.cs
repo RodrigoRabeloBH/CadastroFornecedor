@@ -28,7 +28,7 @@ namespace DevIo.App.Models
         [Required(ErrorMessage = "{0} is required")]              
         public string Price { get; set; }
 
-        [Display(Name = "Created Date")]
+       
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0: dd/MM/yyyy}")]
         public DateTime Created { get; set; }
