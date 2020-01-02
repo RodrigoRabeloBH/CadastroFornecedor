@@ -136,3 +136,4 @@ C:\Dev\CadastroFornecedor\src\DevIo.App\obj\Debug\netcoreapp2.2\DevIO.App.Views.
 C:\Dev\CadastroFornecedor\src\DevIo.App\obj\Debug\netcoreapp2.2\DevIO.App.csproj.CopyComplete
 C:\Dev\CadastroFornecedor\src\DevIo.App\obj\Debug\netcoreapp2.2\DevIO.App.dll
 C:\Dev\CadastroFornecedor\src\DevIo.App\obj\Debug\netcoreapp2.2\DevIO.App.pdb
+C:\Dev\CadastroFornecedor\src\DevIo.App\obj\Debug\netcoreapp2.2\Razor\Views\Product\_ListProducts.g.cshtml.cs

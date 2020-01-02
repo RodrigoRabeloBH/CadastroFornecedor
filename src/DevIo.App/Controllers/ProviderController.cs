@@ -66,6 +66,14 @@ namespace DevIo.App.Controllers
         {
             if (!ModelState.IsValid) return View(providerViewModel);
 
+            var address = await _address.GetAddressByProvider(providerViewModel.Id);
+
+            providerViewModel.Address.Id = address.Id;
+
+            providerViewModel.Address.ProviderId = address.ProviderId;
+
+            await _address.Edit(_mapper.Map<Address>(providerViewModel.Address));
+
             await _repository.Edit(_mapper.Map<Provider>(providerViewModel));
 
             return RedirectToAction("Detail", new { id = providerViewModel.Id });

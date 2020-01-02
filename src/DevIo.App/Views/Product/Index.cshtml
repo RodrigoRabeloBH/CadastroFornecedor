@@ -10,46 +10,6 @@
             <a asp-action="Create" asp-controller="Product" class="btn btn-sm btn-secondary">Create</a>
         </div>  
     </div>
-    <div class="row mt-2">
-        <table class="table table-hover">
-            <thead class="thead-dark">
-                <tr>
-                    <th></th>
-                    <th>Name</th>
-                    <th>Provider</th>
-                    <th>Price</th>
-                    <th>Active</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Products)
-                {
-                <tr>
-                    <td>
-                        <img src="~/images/products/@item.ImageUrl" alt="@item.Name" id="image" class=""/>                        
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Provider.Name)
-                    </td>
-                    <td>
-                        R$ @Html.DisplayFor(modelItem => item.Price)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IsActive)
-                    </td>
-                    <td class="text-right">
-                        <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info"><i class="fa fa-search"></i></a>
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success x"><i class="fa fa-edit"></i></a>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i></a>
-                    </td>
-                </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+    <partial name="_ListProducts" />
 </div>
 
