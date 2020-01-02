@@ -69,13 +69,11 @@ namespace DevIo.App.Controllers
 
             if (productViewModel.Image == null) return View(productViewModel);
 
-            string imageName = Guid.NewGuid() + "_" + productViewModel.Image.FileName;
-
-            string imageUrl = $"images/products/{imageName}";
+            string imageName = Guid.NewGuid() + "_" + productViewModel.Image.FileName;           
 
             await UploadImage(productViewModel, imageName);
 
-            productViewModel.ImageUrl = imageUrl;
+            productViewModel.ImageUrl = imageName;
             productViewModel.Created = DateTime.Now;
 
             await _repository.Add(_mapper.Map<Product>(productViewModel));
@@ -86,7 +84,7 @@ namespace DevIo.App.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(Guid id)
         {
-            var model = _mapper.Map<ProductViewModel>(await _repository.GetById(id));
+            var model = _mapper.Map<ProductViewModel>(await _repository.GetProductProvider(id));
             return View(model);
         }
 
@@ -101,13 +99,11 @@ namespace DevIo.App.Controllers
             {
                 await DeleteFile(productViewModel);
 
-                string imageName = Guid.NewGuid() + "_" + productViewModel.Image.FileName;
-
-                string imageUrl = $"images/products/{imageName}";
+                string imageName = Guid.NewGuid() + "_" + productViewModel.Image.FileName;                
 
                 await UploadImage(productViewModel, imageName);
 
-                productViewModel.ImageUrl = imageUrl;
+                productViewModel.ImageUrl = imageName;
             }
             else
             {
@@ -166,11 +162,9 @@ namespace DevIo.App.Controllers
 
             DirectoryInfo dir = new DirectoryInfo(Path.Combine(_env.WebRootPath, "images/products"));
 
-            FileInfo[] file = dir.GetFiles("*", SearchOption.AllDirectories);
+            FileInfo[] file = dir.GetFiles("*", SearchOption.AllDirectories);            
 
-            string imageName = product.ImageUrl.Substring(product.ImageUrl.LastIndexOf('/') + 1);
-
-            foreach (var image in file) if (imageName == image.Name) image.Delete();
+            foreach (var image in file) if (product.ImageUrl == image.Name) image.Delete();
         }
     }
 }
